@@ -1,0 +1,39 @@
+// $theme-colors: (
+//   "primary": #7655E9,
+//   "info": #212e63,
+//   "success": #58947d,
+//   "warning": #d58445,
+//   "danger": #f44336,
+//   "light": #F5F2EE,
+//   "dark": #212E63
+// );
+
+
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+$font-path: "../../../node_modules/font-awesome/fonts";
+$fa-font-path: "../../../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+// @import '../node_modules/material-kit/assets/scss/material-kit/navbar';
+
+body{
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+
+
+div::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+div::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+div::-webkit-scrollbar-thumb {
+  background: $primary;
+}

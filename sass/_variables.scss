@@ -1,0 +1,14 @@
+$theme-colors: (
+  'primary': #7655e9,
+  'info': #212e63,
+  'success': #58947d,
+  'warning': #d58445,
+  'danger': #f44336,
+  'light': #f5f2ee,
+  'dark': #212e63,
+);
+
+$primary: map-get(
+  $map: $theme-colors,
+  $key: 'primary',
+);

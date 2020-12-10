@@ -25,7 +25,7 @@
               "apps/zenklub/src/favicon.ico",
               "apps/zenklub/src/assets"
             ],
-            "styles": ["apps/zenklub/src/styles.scss"],
+            "styles": ["apps/zenklub/src/styles.scss", "sass/style.scss"],
             "scripts": []
           },
           "configurations": {
