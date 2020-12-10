@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "projects": {
+    "zenklub": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/zenklub",
+      "sourceRoot": "apps/zenklub/src",
+      "prefix": "zenklub",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/zenklub",
+            "index": "apps/zenklub/src/index.html",
+            "main": "apps/zenklub/src/main.ts",
+            "polyfills": "apps/zenklub/src/polyfills.ts",
+            "tsConfig": "apps/zenklub/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/zenklub/src/favicon.ico",
+              "apps/zenklub/src/assets"
+            ],
+            "styles": ["apps/zenklub/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/zenklub/src/environments/environment.ts",
+                  "with": "apps/zenklub/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "zenklub:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "zenklub:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "zenklub:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/zenklub/tsconfig.app.json",
+              "apps/zenklub/tsconfig.spec.json",
+              "apps/zenklub/tsconfig.editor.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/zenklub/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/zenklub/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "zenklub-e2e": {
+      "root": "apps/zenklub-e2e",
+      "sourceRoot": "apps/zenklub-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/zenklub-e2e/cypress.json",
+            "tsConfig": "apps/zenklub-e2e/tsconfig.e2e.json",
+            "devServerTarget": "zenklub:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zenklub:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/zenklub-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/zenklub-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "zenklub"
+}
