@@ -29,6 +29,9 @@
     "zenklub-e2e": {
       "tags": [],
       "implicitDependencies": ["zenklub"]
+    },
+    "partner": {
+      "tags": []
     }
   }
 }

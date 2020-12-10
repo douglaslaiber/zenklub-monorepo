@@ -122,6 +122,36 @@
           }
         }
       }
+    },
+    "partner": {
+      "projectType": "library",
+      "root": "libs/partner",
+      "sourceRoot": "libs/partner/src",
+      "prefix": "zenklub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/partner/tsconfig.lib.json",
+              "libs/partner/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/partner/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/partner/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
