@@ -32,6 +32,12 @@
     },
     "partner": {
       "tags": []
+    },
+    "common-ui": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
     }
   }
 }

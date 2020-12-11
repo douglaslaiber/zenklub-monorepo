@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zenklub/partner": ["libs/partner/src/index.ts"]
+      "@zenklub/partner": ["libs/partner/src/index.ts"],
+      "@zenklub/common-ui": ["libs/common-ui/src/index.ts"],
+      "@zenklub/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

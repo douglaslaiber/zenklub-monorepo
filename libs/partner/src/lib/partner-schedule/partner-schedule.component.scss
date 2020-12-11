@@ -1,0 +1,28 @@
+
+.dates{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  width: 100%;
+}
+.hour-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  width: 100%;
+}
+.card-body{
+  max-height: 365px;
+  overflow-y: scroll;
+}
+
+.horario>button{
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.dia{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

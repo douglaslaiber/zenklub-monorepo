@@ -1,0 +1,85 @@
+.main {
+  background: #fff;
+  position: relative;
+  z-index: 3;
+  padding: 1em;
+}
+
+.main-raised {
+  margin: -60px 30px 90px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.partner{
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+.header{
+  display: flex;
+}
+.top-info{
+  margin-left: 1.5em;
+}
+.partner-name{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.description{
+  font-style: 16px;
+}
+
+.dates{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  width: 100%;
+}
+.hour-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em;
+  width: 100%;
+}
+.card-body{
+  max-height: 365px;
+  overflow-y: scroll;
+}
+
+.horario>button{
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.dia{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.partner-profession{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .3rem;
+}
+
+ngb-rating {
+  font-size: 1.5rem;
+  color:rgb(254, 213, 0);
+}
+
+.raitings{
+  margin-bottom: 1em;
+}
+
+.reviews{
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+}

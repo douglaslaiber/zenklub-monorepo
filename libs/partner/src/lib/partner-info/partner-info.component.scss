@@ -1,0 +1,35 @@
+.header{
+  display: flex;
+}
+.top-info{
+  margin-left: 1.5em;
+}
+.partner-name{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.description{
+  font-style: 16px;
+}
+
+.partner-profession{
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .3rem;
+}
+ngb-rating {
+  font-size: 1.5rem;
+  color:rgb(254, 213, 0);
+}
+
+.raitings{
+  margin-bottom: 1em;
+}
+
+.reviews{
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+}
