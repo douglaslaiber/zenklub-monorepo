@@ -1,28 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { DateTime } from 'luxon';
 import { str_pad } from '@zenklub/utils';
+import { PartnerService } from '../partner.service';
 
 @Component({
   selector: 'zenklub-partner-schedule',
   templateUrl: './partner-schedule.component.html',
-  styleUrls: ['./partner-schedule.component.scss']
+  styleUrls: ['./partner-schedule.component.scss'],
 })
 export class PartnerScheduleComponent implements OnInit {
-  horasHoje: string[] = [];
-  horas: string[] = [];
+  horasHoje: { hora: string; selected: boolean }[] = [];
+  horas: { hora: string; selected: boolean }[] = [];
   dias: { day: string; weekday: string }[] = [];
   allDias: { day: string; weekday: string }[] = [];
   indiceDias = 1;
   hoje = DateTime.local().toFormat('dd/MM');
-
-  constructor() { }
+  horasMap = {};
+  constructor(private partnerService: PartnerService) {}
 
   ngOnInit(): void {
-    this.horasHoje = this.getHoursToday();
-    this.horas = this.getHours();
     this.allDias = this.getDias();
+    this.partnerService.getHours().subscribe((response) => {
+      this.horas = response.map(this.mapHoraState());
+      this.horasMap = this.allDias.reduce((acc, ite) => {
+        if (DateTime.local().toFormat('dd/MM') === ite.day) {
+          const horasHoje = this.getHoursToday().map(this.mapHoraState());
+          acc[ite.day] = [...JSON.parse(JSON.stringify(horasHoje))];
+        } else {
+          acc[ite.day] = [...JSON.parse(JSON.stringify(this.horas))];
+        }
+
+        return acc;
+      }, {});
+      console.log(this.horasMap);
+    });
+
     this.calcDias();
   }
+  private mapHoraState(): (
+    value: any,
+    index: number,
+    array: any[]
+  ) => { hora: any; selected: false } {
+    return (hora) => {
+      return {
+        hora,
+        selected: false,
+      };
+    };
+  }
+
   private calcDias() {
     const offset = (this.indiceDias - 1) * 4;
     this.dias = [...this.allDias.slice(offset, offset + 4)];
@@ -70,5 +97,9 @@ export class PartnerScheduleComponent implements OnInit {
       curDate = curDate.plus({ day: 1 });
     }
     return days;
+  }
+
+  selecionar(hora) {
+    hora.selected = !hora.selected;
   }
 }

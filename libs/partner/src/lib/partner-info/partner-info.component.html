@@ -1,24 +1,24 @@
 <div class="header">
   <div class="img" *ngIf="innerWidth>760">
-    <img class="rounded-circle" src="https://via.placeholder.com/170" alt="partner-portrait">
+    <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
   </div>
   <div class="top-info">
-    <h4 class="partner-name text-secondary mb-4">Maria Silva</h4>
+    <h4 class="partner-name text-secondary mb-4">{{partner.name}}</h4>
     <div>
-      <span class="text-primary partner-profession">Psychologist</span> <span> | Lisboa</span>
+      <span class="text-primary partner-profession">{{partner.profession}}</span> <span> | {{partner.location}}</span>
     </div>
     <div class="mb-4">
-      <ngb-rating max="5" rate="4"></ngb-rating>
-      <a class="text-dark reviews">(25) reviews</a>
+      <ngb-rating max="5" [rate]="partner.rating"></ngb-rating>
+      <a class="text-dark reviews">({{partner.reviews}}) reviews</a>
     </div>
     <div>
-      <span class="partner-name text-secondary ">R$ 120</span>
-      <span class="text-secondary"> / 50 minutos</span>
+      <span class="partner-name text-secondary ">R$ {{partner.rate}}</span>
+      <span class="text-secondary"> / {{partner.time}} minutos</span>
     </div>
   </div>
 
 </div>
 <div class="description mt-3 text-secondary">
-  <ng-container *ngIf="innerWidth>760">{{desc}}</ng-container>
-  <zenklub-read-more [text]="desc" [maxLength]="130" *ngIf="innerWidth<=760"></zenklub-read-more>
+  <ng-container *ngIf="innerWidth>760">{{partner.description}}</ng-container>
+  <zenklub-read-more [text]="partner.description" [maxLength]="130" *ngIf="innerWidth<=760"></zenklub-read-more>
 </div>

@@ -41,6 +41,12 @@
     },
     "shared-ui": {
       "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
     }
   }
 }

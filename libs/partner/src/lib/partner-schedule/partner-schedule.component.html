@@ -19,12 +19,9 @@
       <div>
       </div>
       <div class="horario" *ngFor="let dia of dias">
-        <ng-container *ngIf="dia.day===hoje">
-          <button type="button" *ngFor="let hora of horasHoje" class="btn btn-outline-primary">{{hora}}</button>
-        </ng-container>
-        <ng-container *ngIf="dia.day!==hoje">
-          <button type="button" *ngFor="let hora of horas" class="btn btn-outline-primary">{{hora}}</button>
-        </ng-container>
+        <button type="button" [ngClass]="{active: hora.selected}" *ngFor="let hora of horasMap[dia.day]"
+          class="btn btn-outline-primary" (click)="selecionar(hora)">{{hora.hora}}</button>
+
 
 
       </div>

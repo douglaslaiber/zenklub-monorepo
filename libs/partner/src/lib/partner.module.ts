@@ -12,7 +12,7 @@ import { SharedUiModule } from '@zenklub/shared-ui';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: PartnerListComponent,
   },
 ];
 
