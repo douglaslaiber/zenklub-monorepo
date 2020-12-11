@@ -1,0 +1,2 @@
+<ng-container *ngIf="!readmore">{{shownText}} <a class="text-primary" (click)="readmore=true">Leia Mais</a></ng-container>
+<ng-container *ngIf="readmore">{{text}}</ng-container>

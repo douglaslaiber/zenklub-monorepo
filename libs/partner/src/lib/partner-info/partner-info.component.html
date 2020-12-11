@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="img">
+  <div class="img" *ngIf="innerWidth>760">
     <img class="rounded-circle" src="https://via.placeholder.com/170" alt="partner-portrait">
   </div>
   <div class="top-info">
@@ -19,13 +19,6 @@
 
 </div>
 <div class="description mt-3 text-secondary">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id tincidunt ex. Nam odio dolor, luctus cursus
-  dolor id, bibendum congue arcu. Fusce consequat tincidunt auctor. Nullam tincidunt bibendum nisl, non
-  hendrerit eros ultricies ac. Duis ac purus diam. Phasellus in tempus elit, at tempor nibh. Fusce eget dolor
-  quis metus bibendum vehicula vitae quis dolor. Aliquam efficitur elit felis, sed molestie eros hendrerit id.
-
-  Curabitur placerat mi quis sem blandit rhoncus. Vivamus eget mi nec tortor dapibus malesuada quis sed sem.
-  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vestibulum, dui
-  scelerisque faucibus tristique, ex enim congue sem, vestibulum suscipit nisi lacus quis arcu. Sed non
-  imperdiet neque, quis bibendum tortor.
+  <ng-container *ngIf="innerWidth>760">{{desc}}</ng-container>
+  <zenklub-read-more [text]="desc" [maxLength]="130" *ngIf="innerWidth<=760"></zenklub-read-more>
 </div>

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartnerInfoComponent } from './partner-info/partner-info.component';
 import { PartnerScheduleComponent } from './partner-schedule/partner-schedule.component';
 import { PartnerCardComponent } from './partner-card/partner-card.component';
+import { SharedUiModule } from '@zenklub/shared-ui';
 
 const routes: Routes = [
   {
@@ -16,8 +17,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), NgbModule],
-  declarations: [PartnerListComponent, HomeComponent, PartnerInfoComponent, PartnerScheduleComponent, PartnerCardComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    NgbModule,
+    SharedUiModule,
+  ],
+  declarations: [
+    PartnerListComponent,
+    HomeComponent,
+    PartnerInfoComponent,
+    PartnerScheduleComponent,
+    PartnerCardComponent,
+  ],
   exports: [PartnerListComponent, HomeComponent],
 })
 export class PartnerModule {}

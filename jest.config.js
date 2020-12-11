@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/partner',
     '<rootDir>/libs/common-ui',
     '<rootDir>/libs/utils',
+    '<rootDir>/libs/shared-ui',
   ],
 };

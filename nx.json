@@ -38,6 +38,9 @@
     },
     "utils": {
       "tags": []
+    },
+    "shared-ui": {
+      "tags": []
     }
   }
 }
