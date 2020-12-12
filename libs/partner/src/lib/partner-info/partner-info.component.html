@@ -1,7 +1,11 @@
+<div class="img-center col-sm-12" *ngIf="mobileService.isMobile$|async">
+  <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
+</div>
 <div class="header">
   <div class="img" *ngIf="mobileService.isNotMobile$|async">
     <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
   </div>
+
   <div class="top-info">
     <h4 class="partner-name text-secondary mb-4">{{partner.name}}</h4>
     <div>

@@ -1,38 +1,51 @@
-.header{
+.header {
   display: flex;
 }
-.top-info{
+.top-info {
   margin-left: 1.5em;
   @media (max-width: 768px) {
     margin-left: 0;
   }
 }
-.partner-name{
+
+.img-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: -10px;
+  img {
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.partner-name {
   font-weight: bold;
   font-size: 22px;
 }
 
-.description{
+.description {
   font-style: 16px;
 }
 
-.partner-profession{
+.partner-profession {
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
 }
 ngb-rating {
   font-size: 1.5rem;
-  color:rgb(254, 213, 0);
+  color: rgb(254, 213, 0);
 }
 
-.raitings{
+.raitings {
   margin-bottom: 1em;
 }
 
-.reviews{
+.reviews {
   cursor: pointer;
-  :hover{
+  :hover {
     text-decoration: underline;
   }
 }
