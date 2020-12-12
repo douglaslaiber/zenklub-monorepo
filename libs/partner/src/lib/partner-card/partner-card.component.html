@@ -1,11 +1,12 @@
 <div class="main main-raised">
   <div class="partner">
     <div class="row">
-      <div class="col-md-7 col-sm-12">
+      <div class="col-lg-7 col-sm-12">
         <zenklub-partner-info [partner]="partner"></zenklub-partner-info>
       </div>
-      <div class="col-md-5 col-sm-12 mt-md-4">
-        <zenklub-partner-schedule></zenklub-partner-schedule>
+      <div class="col-lg-5 col-sm-12 mt-lg-0 mt-sm-5">
+        <zenklub-partner-schedule *ngIf="mobileService.isNotSmall$ |async" ></zenklub-partner-schedule>
+        <button class="btn btn-primary btn-lg btn-block rounded mt-4" *ngIf="mobileService.isSmall$ |async" >Agendar seção</button>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="img" *ngIf="innerWidth>760">
+  <div class="img" *ngIf="mobileService.isNotMobile$|async">
     <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
   </div>
   <div class="top-info">
@@ -19,6 +19,7 @@
 
 </div>
 <div class="description mt-3 text-secondary">
-  <ng-container *ngIf="innerWidth>760">{{partner.description}}</ng-container>
-  <zenklub-read-more [text]="partner.description" [maxLength]="130" *ngIf="innerWidth<=760"></zenklub-read-more>
+  <ng-container *ngIf="mobileService.isNotMobile$|async">{{partner.description}}</ng-container>
+  <zenklub-read-more [text]="partner.description" [maxLength]="130" *ngIf="mobileService.isMobile$|async">
+  </zenklub-read-more>
 </div>

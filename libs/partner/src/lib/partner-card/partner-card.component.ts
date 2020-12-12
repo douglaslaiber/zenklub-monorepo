@@ -1,3 +1,4 @@
+import { MobileService } from '@zenklub/utils';
 import { Component, OnInit, Input } from '@angular/core';
 import { Partner } from '@zenklub/data';
 @Component({
@@ -8,7 +9,7 @@ import { Partner } from '@zenklub/data';
 export class PartnerCardComponent implements OnInit {
   @Input()
   partner: Partner;
-  constructor() {}
+  constructor(public mobileService:MobileService) {}
 
   ngOnInit() {}
 }

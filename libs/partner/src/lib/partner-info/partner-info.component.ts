@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit ,Input} from '@angular/core';
 import { Partner } from '@zenklub/data';
-
+import { MobileService } from '@zenklub/utils';
 @Component({
   selector: 'zenklub-partner-info',
   templateUrl: './partner-info.component.html',
@@ -11,15 +11,8 @@ export class PartnerInfoComponent implements OnInit {
   @Input()
   partner:Partner;
 
-  public innerWidth: any;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    this.innerWidth = window.innerWidth;
-  }
-  constructor() {}
+  constructor(public mobileService:MobileService) {}
 
   ngOnInit(): void {
-    this.innerWidth = window.innerWidth;
   }
 }
