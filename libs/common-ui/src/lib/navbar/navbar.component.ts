@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'zenklub-navbar',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public scroll: any;
+
+  @HostListener('window:scroll', ['$event'])
+  onSroll(event) {
+    this.scroll = window.scrollY;
+    console.log(this.scroll)
+  }
+  constructor() {}
 
   ngOnInit(): void {
+    this.scroll =   window.scrollY;
   }
 
 }
