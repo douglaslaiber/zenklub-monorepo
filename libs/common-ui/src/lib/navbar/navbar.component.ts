@@ -12,7 +12,6 @@ export class NavbarComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onSroll(event) {
     this.scroll = window.scrollY;
-    console.log(this.scroll)
   }
   constructor() {}
 

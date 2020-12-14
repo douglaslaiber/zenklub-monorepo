@@ -20,23 +20,30 @@ export class PartnerScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     this.allDias = this.getDias();
-    this.partnerService.getHours().subscribe((response) => {
-      this.horas = response.map(this.mapHoraState());
-      this.horasMap = this.allDias.reduce((acc, ite) => {
-        if (DateTime.local().toFormat('dd/MM') === ite.day) {
-          const horasHoje = this.getHoursToday().map(this.mapHoraState());
-          acc[ite.day] = [...JSON.parse(JSON.stringify(horasHoje))];
-        } else {
-          acc[ite.day] = [...JSON.parse(JSON.stringify(this.horas))];
-        }
-
-        return acc;
-      }, {});
-      console.log(this.horasMap);
-    });
+    this.getHoursFromService();
 
     this.calcDias();
   }
+  private getHoursFromService() {
+    this.partnerService.getHours().subscribe((response) => {
+      this.horas = response.map(this.mapHoraState());
+      this.mapHorasMap();
+    });
+  }
+
+  private mapHorasMap() {
+    this.horasMap = this.allDias.reduce((acc, ite) => {
+      if (DateTime.local().toFormat('dd/MM') === ite.day) {
+        const horasHoje = this.getHoursToday().map(this.mapHoraState());
+        acc[ite.day] = [...JSON.parse(JSON.stringify(horasHoje))];
+      } else {
+        acc[ite.day] = [...JSON.parse(JSON.stringify(this.horas))];
+      }
+
+      return acc;
+    }, {});
+  }
+
   private mapHoraState(): (
     value: any,
     index: number,
