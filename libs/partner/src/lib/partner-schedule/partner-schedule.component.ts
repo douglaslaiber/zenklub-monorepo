@@ -74,14 +74,16 @@ export class PartnerScheduleComponent implements OnInit {
     const dt = DateTime.local();
     const start = dt.toFormat('HH');
     const hours = [];
-    for (let index = Number(start) + 1; index < 21; index++) {
+    const horaMax =
+      Number(this.horas[this.horas.length - 1].hora.substring(0, 2)) || 21;
+
+    for (let index = Number(start) + 1; index <= horaMax; index++) {
       hours.push(`${str_pad(index)}:00`);
     }
     return hours;
   }
   getHours() {
     const dt = DateTime.local();
-    const start = dt.toFormat('HH');
     const hours = [];
     for (let index = 8 + 1; index < 21; index++) {
       hours.push(`${str_pad(index)}:00`);
