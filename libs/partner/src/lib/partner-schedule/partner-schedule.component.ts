@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DateTime } from 'luxon';
-import { str_pad } from '@zenklub/utils';
+import { str_pad, MobileService } from '@zenklub/utils';
 import { PartnerService } from '../partner.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'zenklub-partner-schedule',
@@ -16,7 +17,11 @@ export class PartnerScheduleComponent implements OnInit {
   indiceDias = 1;
   hoje = DateTime.local().toFormat('dd/MM');
   horasMap = {};
-  constructor(private partnerService: PartnerService) {}
+  constructor(
+    private partnerService: PartnerService,
+    public modal: NgbActiveModal,
+    public mobileService: MobileService
+  ) {}
 
   ngOnInit(): void {
     this.allDias = this.getDias();
@@ -110,5 +115,9 @@ export class PartnerScheduleComponent implements OnInit {
 
   selecionar(hora) {
     hora.selected = !hora.selected;
+  }
+
+  close() {
+    this.modal.close();
   }
 }

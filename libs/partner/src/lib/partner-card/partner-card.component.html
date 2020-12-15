@@ -6,7 +6,7 @@
       </div>
       <div class="col-xl-5 col-sm-12 mt-xl-0 mt-md-4">
         <zenklub-partner-schedule *ngIf="mobileService.isNotSmall$ |async" ></zenklub-partner-schedule>
-        <button class="btn btn-primary btn-lg btn-block rounded mt-3" *ngIf="mobileService.isSmall$ |async" >Agendar seção</button>
+        <button class="btn btn-primary btn-lg btn-block rounded mt-3" (click)="open()" *ngIf="mobileService.isSmall$ |async" >Agendar seção</button>
       </div>
     </div>
   </div>
