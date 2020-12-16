@@ -9,6 +9,7 @@
     "nx": "nx",
     "start": "ng serve",
     "build": "nx build api && nx build zenklub",
+    "build:prod": "nx build api && nx build zenklub --prod ",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
