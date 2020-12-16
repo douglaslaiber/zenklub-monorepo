@@ -8,7 +8,7 @@
     "start:prod": "node dist/apps/api/main.js",
     "nx": "nx",
     "start": "ng serve",
-    "build": "nx build api && nx build zenklub --prod",
+    "build": "nx build api && nx build zenklub",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
