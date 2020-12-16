@@ -40,8 +40,8 @@ export class AppService {
       location: faker.address.city(),
       rating: faker.random.float({ min: 3, max: 5, precision: 0.5 }),
       reviews: faker.random.number({ min: 30, max: 250 }),
-      rate: ''+faker.random.number({ min: 60, max: 100, precision: 10 }),
-      time: ''+faker.random.number({ min: 40, max: 60, precision: 5 }),
+      rate: '' + faker.random.number({ min: 60, max: 100, precision: 10 }),
+      time: '' + faker.random.number({ min: 40, max: 60, precision: 5 }),
     };
 
     return partner;

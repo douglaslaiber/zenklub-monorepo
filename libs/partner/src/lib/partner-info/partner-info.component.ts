@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit ,Input} from '@angular/core';
+import { Component, HostListener, OnInit, Input } from '@angular/core';
 import { Partner } from '@zenklub/data';
 import { MobileService } from '@zenklub/utils';
 @Component({
@@ -7,12 +7,10 @@ import { MobileService } from '@zenklub/utils';
   styleUrls: ['./partner-info.component.scss'],
 })
 export class PartnerInfoComponent implements OnInit {
-
   @Input()
-  partner:Partner;
+  partner: Partner;
 
-  constructor(public mobileService:MobileService) {}
+  constructor(public mobileService: MobileService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

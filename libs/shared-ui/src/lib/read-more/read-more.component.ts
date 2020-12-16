@@ -13,7 +13,7 @@ export class ReadMoreComponent implements OnInit {
 
   shownText;
 
-  readmore=false;
+  readmore = false;
 
   constructor() {}
 

@@ -6,7 +6,7 @@ import { MobileService } from './mobile.service';
 describe('Service: Mobile', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MobileService]
+      providers: [MobileService],
     });
   });
 

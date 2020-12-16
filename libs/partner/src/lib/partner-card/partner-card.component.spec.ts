@@ -24,7 +24,7 @@ describe('PartnerCardComponent', () => {
         MockComponent(PartnerScheduleComponent),
         MockComponent(PartnerInfoComponent),
       ],
-      providers: [{ provide: MobileService, useValue: mobileServiceStub }]
+      providers: [{ provide: MobileService, useValue: mobileServiceStub }],
     }).compileComponents();
   }));
 

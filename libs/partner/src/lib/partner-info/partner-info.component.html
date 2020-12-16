@@ -1,29 +1,41 @@
-<div class="img-center col-sm-12" *ngIf="mobileService.isMobile$|async">
-  <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
+<div class="img-center col-sm-12" *ngIf="mobileService.isMobile$ | async">
+  <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait" />
 </div>
 <div class="header">
-  <div class="img" *ngIf="mobileService.isNotMobile$|async">
-    <img class="rounded-circle" [src]="partner.photoUrl" alt="partner-portrait">
+  <div class="img" *ngIf="mobileService.isNotMobile$ | async">
+    <img
+      class="rounded-circle"
+      [src]="partner.photoUrl"
+      alt="partner-portrait"
+    />
   </div>
 
   <div class="top-info">
-    <h4 class="partner-name text-secondary mb-4">{{partner.name}}</h4>
+    <h4 class="partner-name text-secondary mb-4">{{ partner.name }}</h4>
     <div>
-      <span class="text-primary partner-profession">{{partner.profession}}</span> <span> | {{partner.location}}</span>
+      <span class="text-primary partner-profession">{{
+        partner.profession
+      }}</span>
+      <span> | {{ partner.location }}</span>
     </div>
     <div class="mb-4">
       <ngb-rating max="5" [rate]="partner.rating"></ngb-rating>
-      <a class="text-dark reviews">({{partner.reviews}}) reviews</a>
+      <a class="text-dark reviews">({{ partner.reviews }}) reviews</a>
     </div>
     <div>
-      <span class="partner-name text-secondary ">R$ {{partner.rate}}</span>
-      <span class="text-secondary"> / {{partner.time}} minutos</span>
+      <span class="partner-name text-secondary">R$ {{ partner.rate }}</span>
+      <span class="text-secondary"> / {{ partner.time }} minutos</span>
     </div>
   </div>
-
 </div>
 <div class="description mt-3 text-secondary">
-  <ng-container *ngIf="mobileService.isNotMobile$|async">{{partner.description}}</ng-container>
-  <zenklub-read-more [text]="partner.description" [maxLength]="130" *ngIf="mobileService.isMobile$|async">
+  <ng-container *ngIf="mobileService.isNotMobile$ | async">{{
+    partner.description
+  }}</ng-container>
+  <zenklub-read-more
+    [text]="partner.description"
+    [maxLength]="130"
+    *ngIf="mobileService.isMobile$ | async"
+  >
   </zenklub-read-more>
 </div>

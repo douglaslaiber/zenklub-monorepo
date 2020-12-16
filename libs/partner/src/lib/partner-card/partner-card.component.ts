@@ -11,12 +11,17 @@ import { PartnerScheduleComponent } from '../partner-schedule/partner-schedule.c
 export class PartnerCardComponent implements OnInit {
   @Input()
   partner: Partner;
-  constructor(public mobileService:MobileService, private modalService:NgbModal) {}
+  constructor(
+    public mobileService: MobileService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit() {}
 
-  open(){
-    const modalRef = this.modalService.open(PartnerScheduleComponent, {size: 'lg'});
+  open() {
+    const modalRef = this.modalService.open(PartnerScheduleComponent, {
+      size: 'lg',
+    });
     modalRef.componentInstance.name = 'World';
   }
 }

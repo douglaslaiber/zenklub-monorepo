@@ -1,34 +1,53 @@
 <div class="card">
-  <div class="card-header text-white text-center  bg-primary">Agende sua seção</div>
+  <div class="card-header text-white text-center bg-primary">
+    Agende sua seção
+  </div>
   <div class="card-body">
     <div class="dates">
-      <button [disabled]="indiceDias===1" type="button" (click)="prevDias()" class="btn btn-outline-secondary">
+      <button
+        [disabled]="indiceDias === 1"
+        type="button"
+        (click)="prevDias()"
+        class="btn btn-outline-secondary"
+      >
         <i class="fa fa-angle-left"></i>
       </button>
       <ng-container *ngFor="let dia of dias">
-        <div class="dia "><span class="mb2">{{dia.day}}</span><span>{{dia.weekday}}</span></div>
-
-
+        <div class="dia">
+          <span class="mb2">{{ dia.day }}</span
+          ><span>{{ dia.weekday }}</span>
+        </div>
       </ng-container>
-      <button [disabled]="(indiceDias+1)*4>allDias.length" (click)="nextDias()" type="button"
-        class="btn btn-outline-secondary">
+      <button
+        [disabled]="(indiceDias + 1) * 4 > allDias.length"
+        (click)="nextDias()"
+        type="button"
+        class="btn btn-outline-secondary"
+      >
         <i class="fa fa-angle-right"></i>
       </button>
     </div>
     <div class="hour-grid mt-3">
-      <div>
-      </div>
+      <div></div>
       <div class="horario" *ngFor="let dia of dias">
-        <button type="button" [ngClass]="{active: hora.selected}" *ngFor="let hora of horasMap[dia.day]"
-          class="btn btn-outline-primary" (click)="selecionar(hora)">{{hora.hora}}</button>
-
-
-
+        <button
+          type="button"
+          [ngClass]="{ active: hora.selected }"
+          *ngFor="let hora of horasMap[dia.day]"
+          class="btn btn-outline-primary"
+          (click)="selecionar(hora)"
+        >
+          {{ hora.hora }}
+        </button>
       </div>
       <div></div>
     </div>
-
-
   </div>
-  <button class="btn btn-primary btn-lg btn-block rounded mt-3"  *ngIf="mobileService.isSmall$ |async" (click)="close()" >Confirmar Horário</button>
+  <button
+    class="btn btn-primary btn-lg btn-block rounded mt-3"
+    *ngIf="mobileService.isSmall$ | async"
+    (click)="close()"
+  >
+    Confirmar Horário
+  </button>
 </div>

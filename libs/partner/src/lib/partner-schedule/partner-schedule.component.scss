@@ -1,11 +1,10 @@
-
-.dates{
+.dates {
   display: grid;
   grid-template-columns: 35px 1fr 1fr 1fr 1fr 35px;
   grid-column-gap: 1em;
   width: 100%;
 }
-.hour-grid{
+.hour-grid {
   display: grid;
   grid-template-columns: 35px 1fr 1fr 1fr 1fr 35px;
   grid-column-gap: 1em;
@@ -14,7 +13,7 @@
   }
   width: 100%;
 }
-.card-body{
+.card-body {
   max-height: 365px;
   overflow-y: scroll;
   @media (max-width: 576px) {
@@ -22,16 +21,16 @@
   }
 }
 
-.horario>button{
+.horario > button {
   padding: 1em;
   margin-bottom: 1em;
   @media (max-width: 576px) {
-    padding: .5em;
+    padding: 0.5em;
   }
   width: 100%;
 }
 
-.dia{
+.dia {
   display: flex;
   flex-direction: column;
   text-align: center;

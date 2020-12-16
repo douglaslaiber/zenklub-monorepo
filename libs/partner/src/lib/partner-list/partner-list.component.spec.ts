@@ -8,9 +8,8 @@ import { of } from 'rxjs';
 import { mockPartner } from '@zenklub/data';
 import { PartnerService } from '../partner.service';
 
-
 const partnerServiceStub = {
-  getPartners: () => of([mockPartner,mockPartner]),
+  getPartners: () => of([mockPartner, mockPartner]),
 };
 
 describe('PartnerListComponent', () => {
@@ -19,10 +18,9 @@ describe('PartnerListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PartnerListComponent, MockComponent(PartnerCardComponent) ],
-      providers: [{ provide: PartnerService, useValue: partnerServiceStub }]
-    })
-    .compileComponents();
+      declarations: [PartnerListComponent, MockComponent(PartnerCardComponent)],
+      providers: [{ provide: PartnerService, useValue: partnerServiceStub }],
+    }).compileComponents();
   });
 
   beforeEach(() => {

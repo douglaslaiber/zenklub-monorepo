@@ -60,7 +60,6 @@ describe('Service: Partner', () => {
       service.getHours().subscribe((val) => {
         expect(val).toEqual([]);
       });
-
     })
   );
 });

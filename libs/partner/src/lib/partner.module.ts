@@ -29,8 +29,6 @@ const routes: Routes = [
     PartnerCardComponent,
   ],
   exports: [PartnerListComponent],
-  providers: [
-    NgbActiveModal,
-  ]
+  providers: [NgbActiveModal],
 })
 export class PartnerModule {}

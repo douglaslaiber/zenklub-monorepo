@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://zenklub-api-edu.herokuapp.com/api'
+  api: 'https://zenklub-api-edu.herokuapp.com/api',
 };
